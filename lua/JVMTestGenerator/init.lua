@@ -73,7 +73,8 @@ local function create_file()
     print("Creating file " .. test_file_path)
     vim.fn.mkdir(final_path, "p")
     print(test_file_path)
-    vim.cmd[["writefile([], " .. test_file_path .. ")"]]
+    -- vim.cmd[["writefile([], " .. test_file_path .. ")"]]
+    os.execute("touch " .. test_file_path)
 end
 
 
