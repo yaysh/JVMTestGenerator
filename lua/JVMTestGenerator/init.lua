@@ -48,7 +48,7 @@ local function create_file()
         return
     end
     
-    local test_file_path = file_split[1] .. "/test/" .. file_split[2]
+   local test_file_path = file_split[1] .. "/src/test/" .. file_split[2]
 
     -- Check if test file path exists (ie a test file already exists)
     if (FileExists(test_file_path)) then
