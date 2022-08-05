@@ -75,9 +75,22 @@ local function create_file()
     print(test_file_path)
     -- vim.cmd[["writefile([], " .. test_file_path .. ")"]]
     os.execute("touch " .. test_file_path)
+    local test_text = GetTest()
+    os.execute("echo \"" .. test_text .. "\"" .. " > " .. test_file_path)
 end
 
+function GetTest()
+    return [[import org.scalatest.flatspec.AnyFlatSpec
 
+class SetSpec extends AnyFlatSpec {
+
+  \"An empty Set\" should \"have size 0\" in {
+    assert(Set.empty.size == 0)
+  }
+
+}
+]]
+end
 return {
     create_file = create_file,
 }
