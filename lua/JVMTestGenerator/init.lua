@@ -58,9 +58,8 @@ local function create_file()
     end
 
     -- else ask if the user wants to create the file there
-    local question = "Do you want to create the following file:\n" .. test_file_path
-    print (question)
-    local confirmation = vim.fn.input("(y)es/(n)o", "", "file")
+    local question = "Do you want to create the following file:\n" .. test_file_path .. "?\ny/n"
+    local confirmation = vim.fn.input(question, "", "file")
 
     if confirmation ~= "y" then
         print("cancelled file creation")
