@@ -37,7 +37,7 @@ local function create_file()
     end
     -- If both are valid, generate the test file path (not the file, only the path)
     -- TODO: Not tested
-    local file_split = Split(file, "/src/")
+    local file_split = Split(file, "/src/main/")
     if (#file_split) == 0 then
         print("error: invalid current location for buffer (should be in ../src/..*.scala)")
         return
